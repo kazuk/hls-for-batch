@@ -1,0 +1,17 @@
+**/*.exe
+**/*.log
+**/script.tcl
+**/.apc/*
+**/.settings/*
+**/.vivado*
+**/.autopilot/*
+**/db/*
+**/obj/**
+**/impl/**
+
+**/vivado_hls.app
+
+**/sim/*
+**/syn/*
+**/csim/*
+
