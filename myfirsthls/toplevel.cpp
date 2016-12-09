@@ -1,14 +1,15 @@
 #include "toplevel.h"
 
-int test( packed_decimal<6> values[10] )
+int test(OrderLine orderLines[10])
 {
-#pragma HLS INTERFACE ap_memory port=values
+#pragma HLS INTERFACE m_axi depth=1 port=orderLines
 
-	int result =0;
-	for(int i=0;i<10;i++ ) {
+    int result = 0;
+    for (int i = 0; i < 10; i++)
+    {
 #pragma HLS PIPELINE
-		// HLS PIPELINE off : Latency 221  on : Latency 38
-		result += values[i].toInt();
-	}
-	return result;
+        result += orderLines[i].unit_price.toInt() *
+                  orderLines[i].amount.toInt();
+    }
+    return result;
 }

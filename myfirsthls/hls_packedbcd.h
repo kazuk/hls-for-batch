@@ -28,6 +28,10 @@ class packed_decimal
     char bytes[bytelen];
 
   public:
+    packed_decimal() : packed_decimal(0)
+    {
+    }
+
     template <int x>
     packed_decimal(packed_decimal<x> other)
     {
